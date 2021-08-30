@@ -27,6 +27,7 @@ namespace OnlineJobApplication.Controllers
             _ProfileService = new ProfileService(mapper);
         }
         #endregion
+
         #region PreQualification
         [HttpPost]
         [Route("Prequalification")]

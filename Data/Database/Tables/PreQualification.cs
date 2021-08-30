@@ -32,7 +32,7 @@ namespace OnlineJobApplication.Data.Database.Tables
         public bool? RecordStatus { get; set; }
 
         public virtual Country CountryNavigation { get; set; }
-        public virtual States State1 { get; set; }
-        public virtual DriverType StateNavigation { get; set; }
+        public virtual DriverType DriverTypeNavigation { get; set; }
+        public virtual States StateNavigation { get; set; }
     }
 }
