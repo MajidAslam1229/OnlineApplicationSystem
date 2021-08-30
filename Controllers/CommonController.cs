@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace OnlineJobApplication.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class CommonController : Controller
     {
 
@@ -51,7 +53,7 @@ namespace OnlineJobApplication.Controllers
         }
         #endregion
 
-        #region States
+        #region DriverTypeList
         [HttpGet]
         [Route("DriverTypeList")]
         public IActionResult GetDriverTypes()

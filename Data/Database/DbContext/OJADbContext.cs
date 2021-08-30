@@ -50,7 +50,7 @@ namespace OnlineJobApplication.Data.Database.Tables
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Initial Catalog=OnlineJobApplication;Trusted_Connection=True;Data Source=DESKTOP-SE9FIDJ\\MSSQLSERVER01");
+                optionsBuilder.UseSqlServer("Initial Catalog=OnlineJobApplication;Trusted_Connection=True;Data Source=DESKTOP-7QMI1D4\\SQLEXPRESS");
             }
         }
 
