@@ -36,17 +36,6 @@
           "lib/netstandard2.0/ExcelDataReader.DataSet.dll": {}
         }
       },
-      "excellupload/1.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/ExcelUpload.dll": {},
-          "lib/Net.SourceForge.Koogra.dll": {}
-        },
-        "runtime": {
-          "lib/ExcelUpload.dll": {},
-          "lib/Net.SourceForge.Koogra.dll": {}
-        }
-      },
       "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.10": {
         "type": "package",
         "dependencies": {
@@ -1900,20 +1889,6 @@
         "lib/netstandard2.0/ExcelDataReader.DataSet.dll",
         "lib/netstandard2.0/ExcelDataReader.DataSet.pdb",
         "lib/netstandard2.0/ExcelDataReader.DataSet.xml"
-      ]
-    },
-    "excellupload/1.0.0": {
-      "sha512": "7m8n1kN0mFNbzB3xS4/9MLWUK9qa/y8ePA9u7okdamIYv9/IlFDnVvyTfTK0N6oYtLo1TSUTYfy5lcAlUvm1Fg==",
-      "type": "package",
-      "path": "excellupload/1.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "content/Autos.xlsx",
-        "excellupload.1.0.0.nupkg.sha512",
-        "excellupload.nuspec",
-        "lib/ExcelUpload.dll",
-        "lib/Net.SourceForge.Koogra.dll"
       ]
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.10": {
@@ -6418,28 +6393,23 @@
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.15",
       "NPOI >= 2.5.4",
       "Swashbuckle.AspNetCore >= 5.6.3",
-      "System.IdentityModel.Tokens.Jwt >= 6.8.0",
-      "excellupload >= 1.0.0"
+      "System.IdentityModel.Tokens.Jwt >= 6.8.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Majid Aslam\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\DeliveryUnit\\CleanStructure\\DeliveryManagementSystem.csproj",
-      "projectName": "DeliveryManagementSystem",
-      "projectPath": "D:\\Projects\\DeliveryUnit\\CleanStructure\\DeliveryManagementSystem.csproj",
-      "packagesPath": "C:\\Users\\Majid Aslam\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\DeliveryUnit\\CleanStructure\\obj\\",
+      "projectUniqueName": "F:\\OnlineApplicationSystem\\OnlineJobApplication.csproj",
+      "projectName": "OnlineJobApplication",
+      "projectPath": "F:\\OnlineApplicationSystem\\OnlineJobApplication.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "F:\\OnlineApplicationSystem\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Majid Aslam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6516,10 +6486,6 @@
           "System.IdentityModel.Tokens.Jwt": {
             "target": "Package",
             "version": "[6.8.0, )"
-          },
-          "excellupload": {
-            "target": "Package",
-            "version": "[1.0.0, )"
           }
         },
         "imports": [
@@ -6540,20 +6506,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'excellupload 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
-      "libraryId": "excellupload",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    }
-  ]
+  }
 }

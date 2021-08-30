@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CleanStructure.Services.Common
+namespace OnlineJobApplication.Services.Common
 {
     public class UtilService
     {

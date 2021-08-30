@@ -1,8 +1,7 @@
 ﻿using AutoMapper;
-using CleanStructure.Data.Database.Tables;
-using CleanStructure.Models;
-using CleanStructure.Models.DTOs;
-using CleanStructure.Services.Common;
+using OnlineJobApplication.Models;
+using OnlineJobApplication.Models.DTOs;
+using OnlineJobApplication.Data.Database.Tables;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -15,6 +14,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using OnlineJobApplication.Services.Common;
 
 namespace CleanStructure.Controllers.Authentication
 {
@@ -47,7 +47,7 @@ namespace CleanStructure.Controllers.Authentication
         {
             try
             {
-                using (var db = new DuDbContext())
+                using (var db = new OJADbContext())
                 {
                     var authClaims = new List<Claim>();
                     string Name = "";

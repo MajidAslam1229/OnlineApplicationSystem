@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CleanStructure.Models.DTOs
+namespace OnlineJobApplication.Models.DTOs
 {
     public class UserLoginDTO
     {

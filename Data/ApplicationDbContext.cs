@@ -1,11 +1,12 @@
-﻿using CleanStructure.Models;
+﻿
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using OnlineJobApplication.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CleanStructure.Data
+namespace OnlineJobApplication.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, Guid>
     {

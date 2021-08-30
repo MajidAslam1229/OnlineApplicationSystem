@@ -1,6 +1,4 @@
 using AutoMapper;
-using CleanStructure.Data;
-using CleanStructure.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -12,6 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using OnlineJobApplication;
+using OnlineJobApplication.Data;
+using OnlineJobApplication.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -83,7 +84,7 @@ namespace CleanStructure
 
             var mapperConfig = new MapperConfiguration(mc =>
             {
-                //mc.AddProfile(new AutoMapperProfile.UserProfile());
+                mc.AddProfile(new AutoMapperProfile.UserProfile());
             });
 
             IMapper mapper = mapperConfig.CreateMapper();

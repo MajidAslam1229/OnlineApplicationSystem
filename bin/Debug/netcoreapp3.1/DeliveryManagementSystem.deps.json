@@ -8,14 +8,7 @@
       "TRACE",
       "DEBUG",
       "NETCOREAPP",
-      "NETCOREAPP3_1",
-      "NETCOREAPP1_0_OR_GREATER",
-      "NETCOREAPP1_1_OR_GREATER",
-      "NETCOREAPP2_0_OR_GREATER",
-      "NETCOREAPP2_1_OR_GREATER",
-      "NETCOREAPP2_2_OR_GREATER",
-      "NETCOREAPP3_0_OR_GREATER",
-      "NETCOREAPP3_1_OR_GREATER"
+      "NETCOREAPP3_1"
     ],
     "languageVersion": "8.0",
     "platform": "",
@@ -44,7 +37,6 @@
           "NPOI": "2.5.4",
           "Swashbuckle.AspNetCore": "5.6.3",
           "System.IdentityModel.Tokens.Jwt": "6.8.0",
-          "excellupload": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -351,22 +343,6 @@
         },
         "compile": {
           "lib/netstandard2.0/ExcelDataReader.DataSet.dll": {}
-        }
-      },
-      "excellupload/1.0.0": {
-        "runtime": {
-          "lib/ExcelUpload.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          },
-          "lib/Net.SourceForge.Koogra.dll": {
-            "assemblyVersion": "3.1.5.0",
-            "fileVersion": "3.1.5.0"
-          }
-        },
-        "compile": {
-          "lib/ExcelUpload.dll": {},
-          "lib/Net.SourceForge.Koogra.dll": {}
         }
       },
       "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.10": {
@@ -3368,13 +3344,6 @@
       "sha512": "sha512-miW3sWmPXnLM38YadRIfnhL4W4QZajpS6Q/OqsOpFJU5ct8h+M/fMpbGMm5INtsMP0Y1k0WK0stIfSW3RP31Xg==",
       "path": "exceldatareader.dataset/3.6.0",
       "hashPath": "exceldatareader.dataset.3.6.0.nupkg.sha512"
-    },
-    "excellupload/1.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-7m8n1kN0mFNbzB3xS4/9MLWUK9qa/y8ePA9u7okdamIYv9/IlFDnVvyTfTK0N6oYtLo1TSUTYfy5lcAlUvm1Fg==",
-      "path": "excellupload/1.0.0",
-      "hashPath": "excellupload.1.0.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.10": {
       "type": "package",
