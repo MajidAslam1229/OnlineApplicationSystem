@@ -53,7 +53,7 @@ namespace OnlineJobApplication.Controllers
         }
         #endregion
 
-        #region DriverTypeList
+        #region DriverTypes
         [HttpGet]
         [Route("DriverTypeList")]
         public IActionResult GetDriverTypes()

@@ -6397,23 +6397,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\hisdu\\.nuget\\packages\\": {},
+    "C:\\Users\\Majid Aslam\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\MAJID\\PMS\\OnlineApplicationSystem\\OnlineJobApplication.csproj",
+      "projectUniqueName": "D:\\OnlineApplicationSystem\\OnlineJobApplication.csproj",
       "projectName": "OnlineJobApplication",
-      "projectPath": "D:\\MAJID\\PMS\\OnlineApplicationSystem\\OnlineJobApplication.csproj",
-      "packagesPath": "C:\\Users\\hisdu\\.nuget\\packages\\",
-      "outputPath": "D:\\MAJID\\PMS\\OnlineApplicationSystem\\obj\\",
+      "projectPath": "D:\\OnlineApplicationSystem\\OnlineJobApplication.csproj",
+      "packagesPath": "C:\\Users\\Majid Aslam\\.nuget\\packages\\",
+      "outputPath": "D:\\OnlineApplicationSystem\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\hisdu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Majid Aslam\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6510,7 +6510,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

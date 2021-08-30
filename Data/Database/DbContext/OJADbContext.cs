@@ -33,8 +33,11 @@ namespace OnlineJobApplication.Data.Database.Tables
         public virtual DbSet<Country> Country { get; set; }
         public virtual DbSet<DriverLicense> DriverLicense { get; set; }
         public virtual DbSet<DriverType> DriverType { get; set; }
+        public virtual DbSet<EquipmentDriven> EquipmentDriven { get; set; }
         public virtual DbSet<HaulExperience> HaulExperience { get; set; }
+        public virtual DbSet<PositionHeld> PositionHeld { get; set; }
         public virtual DbSet<PreQualification> PreQualification { get; set; }
+        public virtual DbSet<ReferenceType> ReferenceType { get; set; }
         public virtual DbSet<ReferralSource> ReferralSource { get; set; }
         public virtual DbSet<RegistrationAddress> RegistrationAddress { get; set; }
         public virtual DbSet<RegistrationPersonalInformation> RegistrationPersonalInformation { get; set; }
@@ -50,7 +53,7 @@ namespace OnlineJobApplication.Data.Database.Tables
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Initial Catalog=OnlineJobApplication;Trusted_Connection=True;Data Source=DESKTOP-7QMI1D4\\SQLEXPRESS");
+                optionsBuilder.UseSqlServer("Initial Catalog=OnlineJobApplication;Trusted_Connection=True;Data Source=NERVE-CELL-PC2\\SQLEXPRESS");
             }
         }
 
@@ -101,8 +104,6 @@ namespace OnlineJobApplication.Data.Database.Tables
 
             modelBuilder.Entity<AspNetRoleClaims>(entity =>
             {
-                entity.HasIndex(e => e.RoleId);
-
                 entity.HasOne(d => d.Role)
                     .WithMany(p => p.AspNetRoleClaims)
                     .HasForeignKey(d => d.RoleId);
@@ -110,11 +111,6 @@ namespace OnlineJobApplication.Data.Database.Tables
 
             modelBuilder.Entity<AspNetRoles>(entity =>
             {
-                entity.HasIndex(e => e.NormalizedName)
-                    .HasName("RoleNameIndex")
-                    .IsUnique()
-                    .HasFilter("([NormalizedName] IS NOT NULL)");
-
                 entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.Name).HasMaxLength(256);
@@ -124,8 +120,6 @@ namespace OnlineJobApplication.Data.Database.Tables
 
             modelBuilder.Entity<AspNetUserClaims>(entity =>
             {
-                entity.HasIndex(e => e.UserId);
-
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.AspNetUserClaims)
                     .HasForeignKey(d => d.UserId);
@@ -135,8 +129,6 @@ namespace OnlineJobApplication.Data.Database.Tables
             {
                 entity.HasKey(e => new { e.LoginProvider, e.ProviderKey });
 
-                entity.HasIndex(e => e.UserId);
-
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.AspNetUserLogins)
                     .HasForeignKey(d => d.UserId);
@@ -145,8 +137,6 @@ namespace OnlineJobApplication.Data.Database.Tables
             modelBuilder.Entity<AspNetUserRoles>(entity =>
             {
                 entity.HasKey(e => new { e.UserId, e.RoleId });
-
-                entity.HasIndex(e => e.RoleId);
 
                 entity.HasOne(d => d.Role)
                     .WithMany(p => p.AspNetUserRoles)
@@ -168,14 +158,6 @@ namespace OnlineJobApplication.Data.Database.Tables
 
             modelBuilder.Entity<AspNetUsers>(entity =>
             {
-                entity.HasIndex(e => e.NormalizedEmail)
-                    .HasName("EmailIndex");
-
-                entity.HasIndex(e => e.NormalizedUserName)
-                    .HasName("UserNameIndex")
-                    .IsUnique()
-                    .HasFilter("([NormalizedUserName] IS NOT NULL)");
-
                 entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.Email).HasMaxLength(256);
@@ -271,6 +253,19 @@ namespace OnlineJobApplication.Data.Database.Tables
                 entity.Property(e => e.UpdatedDate).HasColumnType("datetime");
             });
 
+            modelBuilder.Entity<EquipmentDriven>(entity =>
+            {
+                entity.Property(e => e.CreatedBy).HasMaxLength(50);
+
+                entity.Property(e => e.CreatedDate).HasColumnType("datetime");
+
+                entity.Property(e => e.Name).HasMaxLength(50);
+
+                entity.Property(e => e.UpdatedBy).HasMaxLength(50);
+
+                entity.Property(e => e.UpdatedDate).HasColumnType("datetime");
+            });
+
             modelBuilder.Entity<HaulExperience>(entity =>
             {
                 entity.Property(e => e.Comments_Notes).HasColumnName("Comments/Notes");
@@ -286,6 +281,19 @@ namespace OnlineJobApplication.Data.Database.Tables
                 entity.Property(e => e.RecordStatus)
                     .HasMaxLength(10)
                     .IsFixedLength();
+
+                entity.Property(e => e.UpdatedBy).HasMaxLength(50);
+
+                entity.Property(e => e.UpdatedDate).HasColumnType("datetime");
+            });
+
+            modelBuilder.Entity<PositionHeld>(entity =>
+            {
+                entity.Property(e => e.CreatedBy).HasMaxLength(50);
+
+                entity.Property(e => e.CreatedDate).HasColumnType("datetime");
+
+                entity.Property(e => e.Name).HasMaxLength(50);
 
                 entity.Property(e => e.UpdatedBy).HasMaxLength(50);
 
@@ -321,15 +329,28 @@ namespace OnlineJobApplication.Data.Database.Tables
                     .HasForeignKey(d => d.Country)
                     .HasConstraintName("FK_PreQualification_Country");
 
+                entity.HasOne(d => d.DriverTypeNavigation)
+                    .WithMany(p => p.PreQualification)
+                    .HasForeignKey(d => d.DriverType)
+                    .HasConstraintName("FK_PreQualification_DriverType");
+
                 entity.HasOne(d => d.StateNavigation)
                     .WithMany(p => p.PreQualification)
                     .HasForeignKey(d => d.State)
-                    .HasConstraintName("FK_PreQualification_DriverType");
-
-                entity.HasOne(d => d.State1)
-                    .WithMany(p => p.PreQualification)
-                    .HasForeignKey(d => d.State)
                     .HasConstraintName("FK_PreQualification_States");
+            });
+
+            modelBuilder.Entity<ReferenceType>(entity =>
+            {
+                entity.Property(e => e.CreatedBy).HasMaxLength(50);
+
+                entity.Property(e => e.CreatedDate).HasColumnType("datetime");
+
+                entity.Property(e => e.Name).HasMaxLength(50);
+
+                entity.Property(e => e.UpdatedBy).HasMaxLength(50);
+
+                entity.Property(e => e.UpdatedDate).HasColumnType("datetime");
             });
 
             modelBuilder.Entity<ReferralSource>(entity =>
